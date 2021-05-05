@@ -61,7 +61,7 @@ class CppMissingToolchainIntegrationTest extends AbstractIntegrationSpec impleme
         then:
         failure.assertHasDescription("Execution failed for task ':compileDebugCpp'.")
         if (OperatingSystem.current().windows) {
-            failure.assertHasCause("""No tool chain is available to build C++ for host operating system '${osName}' architecture '${archName}':
+            failure.assertHasCause("""Error while evaluating property 'compilerVersion' of task ':compileDebugCpp': No tool chain is available to build C++ for host operating system '${osName}' architecture '${archName}':
   - Tool chain 'visualCpp' (Visual Studio):
       - The specified installation directory '${file('vs-install')}' does not appear to contain a Visual Studio installation.
   - Tool chain 'gcc' (GNU GCC):
@@ -71,7 +71,7 @@ class CppMissingToolchainIntegrationTest extends AbstractIntegrationSpec impleme
       - Could not find C++ compiler 'clang++'. Searched in:
           - ${file('clang-bin')}""")
         } else {
-            failure.assertHasCause("""No tool chain is available to build C++ for host operating system '${osName}' architecture '${archName}':
+            failure.assertHasCause("""Error while evaluating property 'compilerVersion' of task ':compileDebugCpp': No tool chain is available to build C++ for host operating system '${osName}' architecture '${archName}':
   - Tool chain 'visualCpp' (Visual Studio):
       - Visual Studio is not available on this operating system.
   - Tool chain 'gcc' (GNU GCC):

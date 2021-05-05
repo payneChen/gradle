@@ -31,7 +31,7 @@ public class InputParameterUtils {
         try {
             return prepareInputParameterValue(inputProperty.getValue());
         } catch (Exception ex) {
-            throw new InvalidUserDataException(String.format("Error while evaluating property '%s' of %s", propertyName, task), ex);
+            throw new InvalidUserDataException(String.format("Error while evaluating property '%s' of %s: " + ex.getMessage(), propertyName, task), ex);
         }
     }
 

@@ -256,7 +256,7 @@ public class Foo {
             .runWithFailure()
 
         then:
-        failureHasCause('The new Java toolchain feature cannot be used at the project level in combination with source and/or target compatibility')
+        failureHasCause("Error while evaluating property 'sourceCompatibility' of task ':compileJava': The new Java toolchain feature cannot be used at the project level in combination with source and/or target compatibility")
     }
 
     def 'configuring toolchain and clearing source and target compatibility is supported'() {

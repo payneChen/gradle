@@ -138,7 +138,7 @@ abstract class AbstractCppComponentIntegrationTest extends AbstractNativeLanguag
 
         expect:
         fails taskNameToAssembleDevelopmentBinary
-        failure.assertHasCause("No tool chain is available to build C++")
+        failure.assertHasCause("Error while evaluating property 'compilerVersion' of task ':compileDebugCpp': No tool chain is available to build C++")
     }
 
     @ToBeFixedForConfigurationCache
